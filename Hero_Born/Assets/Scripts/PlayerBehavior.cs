@@ -5,11 +5,11 @@ using UnityEngine;
 public class PlayerBehavior : MonoBehaviour
 {
     public delegate void JumpingEvent();
-    public event JumpingEvent playerJump;
+    //public event JumpingEvent playerJump;
 
     public float moveSpeed = 10f;
     public float rotateSpeed = 75f;
-    public float jumpVelocity = 2f;
+    public float jumpVelocity = .005f;
     public float distanceToGround = 0.1f;
     public float bulletSpeed = 100f;
     
@@ -66,7 +66,7 @@ public class PlayerBehavior : MonoBehaviour
         {
             _rb.AddForce(Vector3.up * jumpVelocity, ForceMode.Impulse);
             doJump = false;
-            playerJump();
+            //playerJump();
         }
 
         if (doShoot)
